@@ -24,8 +24,8 @@ public class InventoryService {
 
     public List<EventInventoryResponse> getAllEvents() {
         List<Event> allEvents = eventRepository.findAll();
-        return allEvents.stream().map(event -> EventInventoryResponse.builder().event(event.getName())
-                .capacity(event.getLeftCapacity()).venue(event.getVenue()).build()).collect(Collectors.toList());
+        return allEvents.stream().map(event -> EventInventoryResponse.builder().event(event.getName()).eventId(event.getId())
+                .capacity(event.getLeftCapacity()).ticketPrice(event.getTicketPrice()).venue(event.getVenue()).build()).collect(Collectors.toList());
     }
 
     public VenueInventoryResponse getVenueInformation(Long venueId){
