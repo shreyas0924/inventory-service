@@ -5,7 +5,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: ticketing
+#      MYSQL_DATABASE: ticketing
     ports:
       - "3306:3306"
     volumes:
